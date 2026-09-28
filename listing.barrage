@@ -1,0 +1,41 @@
+# Compute
+
+> A bounded weekly clock offered as an alternate to continuous Unix time.
+
+## Purpose
+Explain compute as a week-shaped clock, not an endless second counter. Source: fitzyracing1/compute.
+
+## How it works (plain English)
+1. Treat the week as the bound.
+2. Count inside that week.
+3. Do not pretend time is an infinite Unix tape.
+4. Use the clock as a work frame.
+
+## Key ideas
+- Bounded clock (time has an edge)
+- Weekly frame (the bound is one week)
+- Alternate to Unix time (a different tape than seconds-since-1970)
+
+## The actual code
+```
+# source: fitzyracing1/compute
+clock = weekly_bound
+count_inside_week()
+```
+
+## Line-by-line translation
+1. clock = weekly_bound → “the clock stops at the week edge”
+2. count_inside_week() → “count only inside that frame”
+
+## Decisions the program makes
+- If a count would leave the week → wrap or stop at the bound
+- If Unix time is offered → keep this clock as the alternate
+
+## What a person would notice
+Work is framed by a week, not by an endless counter.
+
+## Current status
+Barrage clone.
+
+## Next possible steps
+Open fitzyracing1/compute and read the clock rules.
